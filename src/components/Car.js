@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 function Car() {
     const [started, setStarted] = useState(false);
@@ -19,6 +19,11 @@ function Car() {
             alert('El coche está apagado');
         }
     }
+
+    useEffect(() => {
+        document.title = 'Coche ' + started;
+    }, [started]);
+
     return (
         <div>
             <h2>Nuestro carro está: {checkStateCar()}</h2>
