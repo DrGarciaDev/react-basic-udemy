@@ -1,11 +1,16 @@
-// import React from 'react';
+import React from 'react';
 
 function Saludar (props) {
     // console.log(props);
     // Working with destructuring
-    const {nombre, apellidos} = props;
+    const {nombre, enviarSaludo} = props;
 
-    return `Hola ${nombre} ${apellidos}`;
+    return (
+        <div>
+            <p>Hola {nombre}</p>
+            <button onClick={() => enviarSaludo(nombre)}>Enviar saludo</button>
+        </div>
+    );
 }
 
 export default Saludar;
