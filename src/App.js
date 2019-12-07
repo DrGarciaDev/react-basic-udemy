@@ -2,9 +2,9 @@ import React from 'react';
 import Saludar from './components/Saludar';
 
 function App() {
-  // const holaMundo = () => {
-  //   return "Hola mundo";
-  // }
+  const enviarSaludo = (nombre) => {
+    console.log('Hola ' + nombre);
+  }
 
   // const numero = () => {
   //   console.log('1');
@@ -14,11 +14,11 @@ function App() {
       <h1>Mi Primer Componente Recordando las bases</h1>
       {/* {holaMundo()}
       <button onClick= {numero}>Click</button> */}
-      <p>
-        <Saludar nombre = "Agustin" apellidos="Perez" edad="20"/>
+       <p>{/* Para que no se renderice una función al momento, sino enviar su lógica, se manda sin parentesís */}
+        <Saludar nombre = "Agustin" enviarSaludo={enviarSaludo}/>
       </p>
       <p>
-        <Saludar nombre = "Izel" apellidos="Perez"/>
+        <Saludar nombre = "Izel" enviarSaludo={enviarSaludo}/>
       </p>
     </div>
   );
