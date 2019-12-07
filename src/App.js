@@ -1,5 +1,6 @@
 import React from 'react';
 import { Button, Accordion, Card } from 'react-bootstrap';
+import { ReactComponent as ReactIcon } from './assets/react.svg';
 import Saludar from './components/Saludar';
 
 function App() {
@@ -27,6 +28,10 @@ function App() {
       <p>
         <Saludar nombre = "Izel" enviarSaludo={enviarSaludo}/>
       </p>
+      <br/>
+      <hr/>
+      {/* imagen como componente */}
+      <ReactIcon/>
       <br/><br/>
       <hr/>
       <h2>Uso de acordiones</h2>
