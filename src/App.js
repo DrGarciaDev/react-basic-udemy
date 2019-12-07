@@ -1,62 +1,38 @@
 import React from 'react';
-import { Button, Accordion, Card } from 'react-bootstrap';
-import { ReactComponent as ReactIcon } from './assets/react.svg';
-import Saludar from './components/Saludar';
+// import Car from './components/Car';
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import Contacto from './pages/Contacto';
+import QuienSoy from './pages/QuienSoy';
 
 function App() {
-  const enviarSaludo = (nombre) => {
-    console.log('Hola ' + nombre);
-  }
 
-  // const numero = () => {
-  //   console.log('1');
-  // }
   return (
     <div className="App">
       <h1>Mi Primer Componente Recordando las bases</h1>
-      <br/><br/>
-      <Button variant="primary">Normal</Button>      
-      <br/><br/>
-      <Button variant="primary" size="lg">Large</Button>      
-      <br/><br/>
-      <Button variant="primary" onClick={() => console.log('Holas')}>OnClik</Button>      
-      {/* {holaMundo()}
-      <button onClick= {numero}>Click</button> */}
-       <p>{/* Para que no se renderice una función al momento, sino enviar su lógica, se manda sin parentesís */}
-        <Saludar nombre = "Agustin" enviarSaludo={enviarSaludo}/>
-      </p>
-      <p>
-        <Saludar nombre = "Izel" enviarSaludo={enviarSaludo}/>
-      </p>
-      <br/>
-      <hr/>
-      {/* imagen como componente */}
-      <ReactIcon/>
-      <br/><br/>
-      <hr/>
-      <h2>Uso de acordiones</h2>
-      <Accordion>
-        <Card>
-          <Card.Header>
-            <Accordion.Toggle as={Button} variant="link" eventKey="0">
-              Click me!
-            </Accordion.Toggle>
-          </Card.Header>
-          <Accordion.Collapse eventKey="0">
-            <Card.Body>Hello! I'm the body</Card.Body>
-          </Accordion.Collapse>
-        </Card>
-        <Card>
-          <Card.Header>
-            <Accordion.Toggle as={Button} variant="link" eventKey="1">
-              Click me!
-            </Accordion.Toggle>
-          </Card.Header>
-          <Accordion.Collapse eventKey="1">
-            <Card.Body>Hello! I'm another body</Card.Body>
-          </Accordion.Collapse>
-        </Card>
-      </Accordion>
+      <h2>Route with React Router Dom</h2>
+      <Router>
+        <div>
+          <Link to="/">
+            <button>Home</button>
+          </Link>
+          <Link to="/contacto">
+            <button>Contacto</button>
+          </Link>
+          <Link to="/quien-soy">
+            <button>Quien Soy</button>
+          </Link>
+        </div>
+
+        <Switch>
+          <Route path="/contacto">
+            <Contacto/>
+          </Route>
+          <Route path="/quien-soy">
+            <QuienSoy/>
+          </Route>
+        </Switch>
+      </Router>
+      {/* <Car/> */}
     </div>
   );
 }
