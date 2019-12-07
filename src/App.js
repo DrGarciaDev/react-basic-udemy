@@ -14,7 +14,12 @@ function App() {
       <h1>Mi Primer Componente Recordando las bases</h1>
       {/* {holaMundo()}
       <button onClick= {numero}>Click</button> */}
-      <Saludar />
+      <p>
+        <Saludar nombre = "Agustin" apellidos="Perez" edad="20"/>
+      </p>
+      <p>
+        <Saludar nombre = "Izel" apellidos="Perez"/>
+      </p>
     </div>
   );
 }
